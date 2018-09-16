@@ -2,6 +2,7 @@
 self portrait
 v1.
 by Jon Darling
+Hard coded V_1
 */
 
 function setup() {
