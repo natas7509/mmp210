@@ -2,15 +2,21 @@
 self portrait
 v1.
 by Jon Darling
-Hard coded Variables
+Hard coded_Interaction
 */
 
 function setup() {
 	createCanvas(640, 520);
 }
 var eyeSize = 100;
+
+
 var leftEyeX1 = 175;
 var leftEyeY1 = 80;
+
+
+
+
 var rightEyeX1 = 450;
 var rightEyeY1 = 80;
 var WhiteEyeSize = 85;
@@ -80,6 +86,12 @@ var bagsRightY3 = 150;
 
 
 function draw() {
+    
+    	
+    
+    
+	
+
      
    
     
@@ -87,8 +99,9 @@ function draw() {
 	background("#F7F1DA");
     fill("#917A4F");
     noStroke();
-      
    
+    	
+      
    
      
     // Facial lines
@@ -113,6 +126,7 @@ function draw() {
     
    
      // nose
+    
 	fill("#917A4F");
     noStroke()
 //    ellipse(317, 200,80, 120);
@@ -154,16 +168,23 @@ function draw() {
     
   
     
-    // eyes
+    // BlueEyes
     noStroke();
     
-    fill ("#78A1BB")
+    fill ("#78A1BB");
+
+	
+
+    
     ellipse(rightEyeX1, rightEyeY1, eyeSize);// right
-    ellipse(leftEyeX1, leftEyeY1, eyeSize);// left
+    ellipse(frameCount,leftEyeY1, eyeSize);// left
     
      // eyebrows
     noStroke();
-    fill ("#917A4F")
+    fill ("#917A4F");
+    
+   
+	
     ellipse (eyebrowsRightX1, eyebrowsRightY1, eyebrowsRightX2, eyebrowsRightY2);
     ellipse (eyebrowsleftX1, eyebrowsleftY1, eyebrowsleftX2, eyebrowsleftY2);
     
@@ -171,8 +192,11 @@ function draw() {
      			
     
     // pupils
+
     ellipse(pupilsRightX1, pupilsRightY1, pupilsRightX2, pupilsRightY2);// right
 	ellipse(pupilsLeftX1, pupilsLeftY1, pupilsLeftX2, pupilsLeftY2);// left
+    
+   
       
    
     
