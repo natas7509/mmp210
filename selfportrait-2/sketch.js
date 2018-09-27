@@ -10,7 +10,9 @@ Hard coded_Interaction
 
 
 function setup() {
+    
 	createCanvas(640, 520);
+    textSize(20);
 }
 
 var eyeSize = 85;
@@ -41,7 +43,7 @@ var eyebrowsRightX1 = 450;
 var eyebrowsRightY1 = 15;
 var eyebrowsRightX2 = 130;
 var eyebrowsRightY2 = 20;
-var pupilsRightX1 = 210;
+var pupilsRightX1 = 200;
 var pupilsRightY1 = 100;
 var pupilsRightX2 = 20;
 var pupilsRightY2 = 35;
@@ -94,6 +96,20 @@ var bagsRightY3 = 150;
 
 function draw() {
     
+      
+    // Canvas
+	background("#F7F1DA");
+
+    noStroke();
+    
+     var eyePos = map(mouseX,0,width,-20, 20);
+    
+    //     text(frameCount,40,40);
+    
+//    ellipse(frameCount, 100, 40);
+    
+   
+    
     	
     
     
@@ -101,13 +117,9 @@ function draw() {
 
      
    
+  
     
-    // Canvas
-	background("#F7F1DA");
 
-    noStroke();
-    
-     var eyePos = map(mouseX,0,width,-20, 20);
    
     
     	
@@ -204,15 +216,15 @@ function draw() {
     // BlueEyes
     noStroke();
     fill ("#78A1BB");
-    leftEyeX1 = map(mouseX,0, width,-40, 120);
+
 
     
     //gives the speed of 2 to leftEyeX1 and leftEyeY1
     leftEyeX1 = leftEyeX1 + 2 ;
 
     
-    // if X is greater than 175....stay at 175
-    if (leftEyeX1 > 175) {
+    // if X is greater than 180....stay at 180
+    if (leftEyeX1 > 180) {
         
         leftEyeX1 = 180;
     }
@@ -235,11 +247,14 @@ function draw() {
        fill ("black")
      			
     
-    // pupils
+     //pupils
+    
+     pupilsRightX1 = map(mouseX,0, width, 10, 120);
+     
     
      
     //gives the speed of 2 to pupilsLeftX1 
-    pupilsLeftX1 = pupilsLeftX1 + 2 ;
+    pupilsLeftX1 = pupilsLeftX1 + 1.5 ;
 //    
     
     // if pupilsLeftX1 is greater than 440....stay at 440
@@ -252,21 +267,14 @@ function draw() {
     ellipse(pupilsRightX1, pupilsRightY1, pupilsRightX2, pupilsRightY2);// right
 	ellipse(pupilsLeftX1, pupilsLeftY1, pupilsLeftX2, pupilsLeftY2);// left
     
-//    //hat
-//      fill ("green")
-//     rect(rectX, rectY, rectWidth, rectHeight);
-//    
-//    //gives the speed of 2 to rectX
-//    rectX = rectX + 2 ;
-//    
-//    // if rectX is greater than 250....stay at 250
-//    if (rectX > 250) {
-//        
-//        rectX = 250;
-//    }
-   
+
       
    
+    
+   
+}
+
+function mousePressed() {
     
    
 }
