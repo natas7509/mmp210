@@ -12,6 +12,7 @@ Hard coded_Interaction
 function setup() {
 	createCanvas(640, 520);
 }
+
 var eyeSize = 85;
 
 var leftEyeX1 = 175;
@@ -103,9 +104,11 @@ function draw() {
     
     // Canvas
 	background("#F7F1DA");
-    fill("#917A4F");
+
     noStroke();
     
+     var eyePos = map(mouseX,0,width,-20, 20);
+   
     
     	
       
@@ -126,6 +129,7 @@ function draw() {
     line(510, 400, 570, 300); // two xy coordinates
     line(510, 400, 330,500); // two xy coordinates
     line(328, 500, 280,500); // two xy coordinates
+    
     
     
      
@@ -154,6 +158,7 @@ function draw() {
     strokeWeight(5)
     fill("red")
     arc(mouthRedX1, mouthRedY1, mouthRedX2, mouthRedY2, 0, PI);
+  
     
     
    
@@ -199,6 +204,7 @@ function draw() {
     // BlueEyes
     noStroke();
     fill ("#78A1BB");
+    leftEyeX1 = map(mouseX,0, width,-40, 120);
 
     
     //gives the speed of 2 to leftEyeX1 and leftEyeY1
@@ -206,7 +212,7 @@ function draw() {
 
     
     // if X is greater than 175....stay at 175
-    if (leftEyeX1 > 230) {
+    if (leftEyeX1 > 175) {
         
         leftEyeX1 = 180;
     }
@@ -236,7 +242,7 @@ function draw() {
     pupilsLeftX1 = pupilsLeftX1 + 2 ;
 //    
     
-    // if pupilsLeftX1 is greater than 480....stay at 480
+    // if pupilsLeftX1 is greater than 440....stay at 440
     if (pupilsLeftX1 > 460) {
         
        pupilsLeftX1 = 440;
