@@ -9,11 +9,6 @@ Hard coded_Interaction
 
 
 
-function setup() {
-    
-	createCanvas(640, 520);
-    textSize(20);
-}
 
 var s = 10;
 
@@ -22,34 +17,26 @@ var mouthSize = 80;
 
 var leftEyeX1 = 175;
 var leftEyeY1 = 100;
-
- 
-
-
-
-
-
-
-
-
-
 var rightEyeX1 = 450;
 var rightEyeY1 = 100;
+
 var WhiteEyeSize = 85;
 var leftWhitesEyesX1 = 450;
 var leftWhitesEyesY1 = 100;
 var leftWhitesEyesX2 = 130;
 var rightWhitesEyesX1 = 170;
 var rightWhitesEyesY1 = 100;
-var rightWhitesEyesX2 = 130;  
+var rightWhitesEyesX2 = 130; 
+
 var eyebrowsleftX1 = 150;
 var eyebrowsleftY1 = 40;
 var eyebrowsleftX2 = 140;
 var eyebrowsleftY2 = 20;
 var eyebrowsRightX1 = 450;
-var eyebrowsRightY1 = 15;
+var eyebrowsRightY1 = 40;
 var eyebrowsRightX2 = 150;
 var eyebrowsRightY2 = 20;
+
 var pupilsRightX1 = 200;
 var pupilsRightY1 = 100;
 var pupilsRightX2 = 20;
@@ -59,14 +46,13 @@ var pupilsLeftY1 = 100;
 var pupilsLeftX2 = 20;
 var pupilsLeftY2 = 35;
    
-     
-    
 var noseX1 = 300;
 var noseY1 = 110;
 var noseX2 = 300;
 var noseY2 = 70;
 var noseX3 = 330;
 var noseY3 = 240;
+
 var nostrilsX1 = 300; 
 var nostrilsY1 = 235; 
 var nostrilsX2 = 20;
@@ -105,17 +91,23 @@ var bagsRightX3 = 400;
 var bagsRightY3 = 150;
 
 
+function setup() {
+    
+	createCanvas(640, 550);
+    textSize(20);
+}
+
+
 function draw() {
  
    
       
     // Canvas
 	background("#F7F1DA");
-
     noStroke();
+    var eyePos = map(mouseX,0,width,-20, 20);/* make sure to keep this var in draw section*/
     
-     var eyePos = map(mouseX,0,width,-20, 20);
-    	
+    
       
     // Facial lines
     
@@ -134,6 +126,39 @@ function draw() {
     line(510, 400, 570, 300); // two xy coordinates
     line(510, 400, 330,500); // two xy coordinates
     line(328, 500, 280,500); // two xy coordinates
+    
+     //ears
+    
+    fill("#C1A268");
+    
+    
+    stroke("black");
+    strokeWeight(2);
+    arc(602.5,210, 28, 140, 4.5, PI);// right
+    arc(40,210, 28, 140, 10, PI);// left
+    
+    fill("#917A4F");
+    
+    arc(42,220, 11, 60, 4, PI);//left inner
+    arc(600,220, 11, 60, 4, PI);//right inner
+    
+    
+    
+    
+    
+    
+    //neck
+    
+    stroke("black")
+    strokeWeight(5)
+    
+    line(100, 349, 70, 1400);
+    line(542, 349, 590, 1400);
+    noFill();
+    strokeWeight (2);
+    arc(305, 535, 100, 20, 0, PI);// adams apple
+    line(180, 500, 200, 1400);// neck-muscles
+    line(450, 500, 400, 1400);// neck-muscles
     
     // crows-feet-right
     stroke ("#917A4F")
@@ -172,11 +197,10 @@ function draw() {
     fill ("#F7F1DA");
     stroke("#917A4F")
     strokeWeight(1);
-    arc(320, 236, 40, 20,0, PI);
-    
+    arc(320, 236, 40, 20,0, PI);// nose-base detailing
     
    
-    
+
     
 
     	
@@ -186,10 +210,11 @@ function draw() {
     arc(mouthShadowX1, mouthShadowY1, mouthShadowX2, mouthShadowY2, 0, PI);
     stroke("black")
     strokeWeight(5)
-    fill("red")
+    fill("#CE7458")
+    noStroke();
     arc(mouthRedX1, mouthRedY1, mouthRedX2, mouthRedY2, 0, PI);
    
-    mouthShadowX1 = map(mouseX, 0, width, 280, 305);
+    mouthShadowX1 = map(mouseX, 0, width, 280, 303);
 
     
     
@@ -209,10 +234,7 @@ function draw() {
         
        teethY1 = 310;
     }
- // mustache
-    noStroke()
-   fill("#917A4F");
-   
+ 
 	
     
 
@@ -262,6 +284,21 @@ function draw() {
     ellipse (eyebrowsRightX1, eyebrowsRightY1, eyebrowsRightX2, eyebrowsRightY2);
     ellipse (eyebrowsleftX1, eyebrowsleftY1, eyebrowsleftX2, eyebrowsleftY2);
     
+    //Cap
+    fill("#8E457C");
+
+   
+    stroke("black")
+    strokeWeight(2)
+    rect(30, 0, 575, 40);
+     fill("#753966");
+    ellipse(320, 40, 613, 40);
+//     arc(315, 40, 560, 40, 0, PI);
+    
+    
+  
+    
+   
     //pupils
     
     fill ("black")
@@ -271,6 +308,16 @@ function draw() {
     
     ellipse(pupilsRightX1, pupilsRightY1, pupilsRightX2, pupilsRightY2);// right
 	ellipse(pupilsLeftX1, pupilsLeftY1, pupilsLeftX2, pupilsLeftY2);// left
+    
+    
+     //mustache
+    
+    fill("#C1A268");
+    noStroke()
+    quad(220, 245, 380, 245, 460, 310, 140, 310);
+    
+   
+    
     
     
   

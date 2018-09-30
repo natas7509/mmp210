@@ -1,35 +1,7 @@
 body {
-  font-family: Helvetica;
-  margin: 0;
+  font-family: roboto,helvetica,sans serif;
+  margin: 0, auto;
   padding: 0;
   background-color: aliceblue;
-  color: #78A1BB;
+  color: black;
 }
-
-/*
-#container {
-  padding: 50px 0;
-  width: 500px;
-  
-}
-*/
-
-/*
-.link {
-  list-style: none;
-  color: red;
-  font-size: 2em;
-}
-
-.link a {
-  color: orange;
-}
-
-a {
-  color: red;
-  transition: color 500ms
-}
-
-a:hover {
-  color: white;
-}*/
