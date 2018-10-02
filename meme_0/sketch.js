@@ -9,14 +9,14 @@ mmp 210 week 5
 
 function setup() {
     
-    createcanvas(500, 500);
+    createCanvas (500, 500);
 }
 
 function draw() {
-    background(0);
+    background(220);
     fill(255);
     textAlign(CENTER, CENTER);
     textSize(100);
     textFont("Comic Sans MS");
-    text("MEME", width/2, height/2);
+    text("Hello", width/2, height/2);
 }
