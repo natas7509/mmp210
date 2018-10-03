@@ -37,8 +37,9 @@ header {
 
 .hero {
     
-   background-image: url(images/banner.jpg);
-   padding: 52px 0px 80px 72px;
+   background-image: url(images/light_banner.jpg);
+
+   padding: 52px 50px 100px 72px;
    margin-top: 80px;
    margin-bottom: 1%;
    background-size: cover;
@@ -47,11 +48,12 @@ header {
 }
 .hero h1 {
     
-    color: #D85620;
+    color: #FDD57E;
     font-weight: 700;
     font-size: 33px;
-    margin-bottom: 70px;
+    margin-bottom: 0,auto;
     text-align: left;
+
 }
 
 
