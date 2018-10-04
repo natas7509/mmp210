@@ -7,10 +7,12 @@ mmp 210 week 5
 
 */
 
-var img;
+var SPimg;
+var eyesImg;
 
 function preload() {
-	img = loadImage("SP-drunk-img.jpg");
+	SPimg = loadImage("SP-drunk-img.jpg");
+    eyesImg = loadImage("eyes.png");
 }
 
 
@@ -23,9 +25,22 @@ function draw(){
 
 
     background(233);
+    
     fill(255);
    
-    image(img, -300, 0);
+    noTint();
+    image(SPimg, -300, 0);
+
+    tint(255, 0, 255);
+//    image(eyesImg,mouseX, mouseY);
+   
+    image( eyesImg, 60, 100, mouseX, mouseY);
+    
+//	image( eyesImg, 0, 0, width, height);
+//	tint(0, 255, 255, 127);
+	
+   
+   
     textAlign(CENTER, CENTER);
     textSize(40);
     textFont("Trebuchet MS");
