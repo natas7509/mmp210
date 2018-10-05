@@ -5,14 +5,15 @@ by Jon
 rough draft
 mmp 210 week 5 
 
+
 */
 
 var SPimg;
-var eyesImg;
+//var eyesImg; /*activate for next submission*/
 
 function preload() {
 	SPimg = loadImage("SP-drunk-img.jpg");
-    eyesImg = loadImage("eyes.png");
+//    eyesImg = loadImage("eyes.png");
 }
 
 
@@ -34,7 +35,7 @@ function draw(){
     tint(255, 0, 255);
 //    image(eyesImg,mouseX, mouseY);
    
-    image( eyesImg, 60, 100, mouseX, mouseY);
+//    image( eyesImg, 60, 100, mouseX, mouseY);
     
 //	image( eyesImg, 0, 0, width, height);
 //	tint(0, 255, 255, 127);
