@@ -12,14 +12,14 @@ var SPimg;
 //var eyesImg; /*activate for next submission*/
 
 function preload() {
-	SPimg = loadImage("SP-drunk-img.jpg");
+	SPimg = loadImage("SP-drunk-imgV-3.jpg");
 //    eyesImg = loadImage("eyes.png");
 }
 
 
 function setup() {
     
-    createCanvas (550, 550);
+    createCanvas (650, 550);
 }
 function draw(){
 	
@@ -30,7 +30,7 @@ function draw(){
     fill(255);
    
     noTint();
-    image(SPimg, -300, 0);
+    image(SPimg, 0, 0);
 
     tint(255, 0, 255);
 //    image(eyesImg,mouseX, mouseY);
@@ -43,10 +43,10 @@ function draw(){
    
    
     textAlign(CENTER, CENTER);
-    textSize(40);
+    textSize(45);
     textFont("Trebuchet MS");
     fill('white');
     text("Hi problem,", width/2, height/20);
-    fill('red');
+    fill('white');
     text(" what seems to be the officer?", width/2, 520);
 }
