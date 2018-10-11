@@ -13,6 +13,7 @@ var randyImg;
 var copImg
 var laughingImg
 var x = 0;
+var ellipse;
 
 function preload() {
     SPimg = loadImage("SP-drunk-imgV-3.jpg");
@@ -32,15 +33,21 @@ function draw() {
     background(233);
     fill(255);
 
+
+
+
+
     noTint();
     image(SPimg, 0, 0);
 
 
+
+
+
     if (mouseIsPressed){
 
-        if  (mouseX < width/2) {
 
-            image(randyImg, 75, -5, width, height);
+
 
 
             textSize(60);
@@ -53,10 +60,10 @@ function draw() {
 
         } 
 
+
         else if (mouseY < 300) {
             image(copImg, 120, 0);
             image( eyesImg, -4, -70, width, height);
-
 
 
 
@@ -66,7 +73,8 @@ function draw() {
             //            text("Hi problem,", width/2, height/10);
             textSize(57);
             fill('white');
-            text("I'm outa here!", 270, 480);
+            text("I'm outa here!", 270, 520);
+
 
 
         }
@@ -82,11 +90,11 @@ function draw() {
             text("Hi problem,", width/2, height/10);
             textSize(46);
             fill('white');
-            text(" what seems to be the officer?", width/2.0, 500);
+            text(" what seems to be the officer?", width/2, 500);
+		
 
 
         }   
-
 
 
 
