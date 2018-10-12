@@ -8,19 +8,20 @@ mmp 210 week 5
 */
 
 var SPimg;
-var eyesImg; /*activate for next submission*/
+var eyesImg; 
 var randyImg;
-var copImg
-var laughingImg
+var copImg;
+var laughingImg;
+var redEyesImg;
 var x = 0;
-var ellipse;
+
 
 function preload() {
     SPimg = loadImage("SP-drunk-imgV-3.jpg");
     eyesImg = loadImage("eyes.png");
-    randyImg = loadImage("randy-1.png");
+    randyImg = loadImage("randy.png");
     copImg = loadImage("cop.png");
-    laughingImg = loadImage("laughing.png");
+    redEyesImg = loadImage("towelie.png");
 }
 
 
@@ -33,55 +34,51 @@ function draw() {
     background(233);
     fill(255);
 
-
-
-
-
     noTint();
     image(SPimg, 0, 0);
 
 
 
 
-
     if (mouseIsPressed){
-
-
-
-
-
-            textSize(60);
-            textFont("Trebuchet MS");
-            fill('white');
-            //            text("Hi problem,", width/2, height/10);
-            textSize(55);
-            fill('white');
-            text("dad!!", 120, 480);
-
-        } 
-
-
-        else if (mouseY < 300) {
+        /*CopHatClicked*/
+        if 	(mouseX > width/2 && mouseY < height/2) {
             image(copImg, 120, 0);
             image( eyesImg, -4, -70, width, height);
-
-
-
-            textSize(60);
+            textSize(40);
             textFont("Trebuchet MS");
             fill('white');
-            //            text("Hi problem,", width/2, height/10);
-            textSize(57);
+            text("I'm outa here!", 410, 460);
+
+        } else if (mouseX < width/2 && mouseY > height/2) {
+
+            /*StansMouthClicked*/
+            image(randyImg,40, -50, width, height);
+            textSize(40);
+            textFont("Trebuchet MS");
             fill('white');
-            text("I'm outa here!", 270, 520);
+            text("Oh Gross!!", 100, 480);
 
 
+
+
+            /*Towelie-Comment*/
+
+        } else if (mouseX < width/2 && mouseY < height/2) {
+
+            image(redEyesImg, -55, 200,width/2, height/2);
+            image(copImg, 120, 0);
+            textFont("Trebuchet MS");
+            textSize(40);
+            fill('white');
+            text("That was close!", 170, 500);
+
+
+            /*RandysMouthClicked*/
 
         }
 
-
-
-        else   {
+        else  {
 
             textAlign(CENTER, CENTER);     
             textSize(60);
@@ -91,15 +88,10 @@ function draw() {
             textSize(46);
             fill('white');
             text(" what seems to be the officer?", width/2, 500);
-		
+
 
 
         }   
 
-
-
     }
-
-
-
 }
