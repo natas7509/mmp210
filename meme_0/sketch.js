@@ -10,7 +10,9 @@ mmp 210 week 5
 
 var SPimg;
 //var eyesImg; /*activate for next submission*/
-
+//var x =100;
+//var y =100;
+//var s =100;
 function preload() {
 	SPimg = loadImage("SP-drunk-imgV-3.jpg");
 //    eyesImg = loadImage("eyes.png");
@@ -28,6 +30,17 @@ function draw(){
     background(233);
     
     fill(255);
+    
+//    	ellipse(x, y, s);
+//	x += 2;
+//	y += 2;
+//	s += 2;
+//	if (x > width) {
+//		x = 0;
+//	}
+//	if (y > height) {
+//		y = 0;
+//	}
    
     noTint();
     image(SPimg, 0, 0);

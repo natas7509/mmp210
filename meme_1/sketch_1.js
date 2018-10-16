@@ -14,6 +14,8 @@ var copImg;
 var laughingImg;
 var redEyesImg;
 var x = 0;
+var y = 0;
+var s = 100; // size
 
 
 function preload() {
@@ -33,8 +35,7 @@ function draw() {
 
     background(233);
     fill(255);
-
-
+    
 
 
 
@@ -46,21 +47,21 @@ function draw() {
 
 
     if (mouseIsPressed){
-        
+
         else  (mouseX > width/2 && mouseY > height/2){
 
-                textAlign(CENTER, CENTER);     
-                textSize(60);
-                textFont("Trebuchet MS");
-                fill('white');
-                text("Hi problem,", width/2, height/10);
-                textSize(46);
-                fill('white');
-                text(" what seems to be the officer?", width/2, 500);
+            textAlign(CENTER, CENTER);     
+            textSize(60);
+            textFont("Trebuchet MS");
+            fill('white');
+            text("Hi problem,", width/2, height/10);
+            textSize(46);
+            fill('white');
+            text(" what seems to be the officer?", width/2, 500);
 
 
 
-            }   
+        }   
 
         else if (mouseX < width/2 && mouseY > height/2) {
 
@@ -74,6 +75,8 @@ function draw() {
             textSize(55);
             fill('white');
             text("Oh Gross!!", 65, 480);
+
+           
 
 
 
@@ -106,6 +109,8 @@ function draw() {
 
 
                 /*RandysMouthClicked*/
+                
+                
 
             }
         }
