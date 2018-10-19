@@ -6,7 +6,7 @@ conditional logic
 mmp 210 week 5 
 
 */
-var copBackImg;
+
 var SPimg;
 var eyesImg; 
 var randyImg;
@@ -19,16 +19,13 @@ var CopY = 0;
 var s = 200;
 var TowlieX = -55;
 var TowlieY = 200;
-var VomitX = 40;
-var VomitY = -50;
 var r = 255;
 var c = 20;
 
 
 
 function preload() {
-    copBackImg = loadImage("copBack.png");
-    SPimg = loadImage("SP-V3-Fill.jpg");
+    SPimg = loadImage("SP-drunk-imgV-3.jpg");
     eyesImg = loadImage("eyes.png");
     randyImg = loadImage("randy.png");
     copImg = loadImage("cop.png");
@@ -47,8 +44,6 @@ function draw() {
 
     noTint();
     image(SPimg, 0, 0);
-    image(copBackImg, 180, 26);
-//    image(SPfillImg,0,0);
 
 
 
@@ -58,10 +53,7 @@ function draw() {
 
 
         if 	(mouseX > width/2 && mouseY < height/2) {
-            image(SPimg, 0, 0);
             image(copImg, CopX, CopY);
-            CopX += random(-4, 4);
-            CopY += random(2, 7);
 
             image( eyesImg, -4, -70, width, height);
 
@@ -87,10 +79,7 @@ function draw() {
 
             /*StansMouthClicked*/
 
-            image(randyImg,VomitX, VomitY, width, height);
-
-            VomitX += random(-3, 3);
-            VomitY += random(-3, 3);
+            image(randyImg,40, -50, width, height);
             textSize(40);
             textFont("Trebuchet MS");
             fill('white');
@@ -105,32 +94,16 @@ function draw() {
         /*Towelie-Comment*/
 
         if (mouseX < width/2 && mouseY < height/2) {
-               image(SPimg, 0, 0);
-                         
 
             image(redEyesImg, TowlieX, TowlieY ,width/2, height/2);
+            image(copImg, CopX, CopY);
 
-
-          
-            
-
-            TowlieX += random(-2, 2);
-            TowlieY += random(-2, 2);
+            TowlieX += random(-5, 5);
+            TowlieY += random(-5, 5);
             textFont("Trebuchet MS");
             textSize(40);
             fill('white');
-
-
-
-            push();
-
-            translate(width/2, height/2);
-            var morph = frameCount / 260 * PI;
-            shearX(morph);
-
-            text('That was close!',100, 200);
-
-            pop();
+            //            text("That was close!", 170, 500);
 
         }
 
@@ -138,8 +111,7 @@ function draw() {
         /*RandysMouthClicked*/
 
         else if (mouseX > width/2 && mouseY > height/2)  {
-            
-            
+
             textAlign(CENTER, CENTER);     
             textSize(60);
             textFont("Trebuchet MS");
