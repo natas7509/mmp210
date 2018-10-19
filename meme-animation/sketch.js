@@ -47,7 +47,8 @@ function draw() {
 
     noTint();
     image(SPimg, 0, 0);
-    image(copBackImg, 180, 26);
+     image(copBackImg, 180, 26);
+//    image(copBackImg, 180, 26);
 //    image(SPfillImg,0,0);
 
 
@@ -86,6 +87,7 @@ function draw() {
         } else if (mouseX < width/2 && mouseY > height/2) {
 
             /*StansMouthClicked*/
+               
 
             image(randyImg,VomitX, VomitY, width, height);
 
@@ -138,6 +140,7 @@ function draw() {
         /*RandysMouthClicked*/
 
         else if (mouseX > width/2 && mouseY > height/2)  {
+                image(copBackImg, 180, 26);
             
             
             textAlign(CENTER, CENTER);     
@@ -151,8 +154,13 @@ function draw() {
 
 
 
-        }   
+        }  
+//        else (mouseX < width/2 && mouseY < height/2) 
+//               image(SPimg, 0, 0);
+        
     }
+    
+                         
 
 
 }
