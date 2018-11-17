@@ -8,7 +8,7 @@ mmp 210 week 7
 */
 
 var copBackImg;
-var canavasImg;
+var SPimg;
 var eyesImg; 
 var randyImg;
 var stanX = 160; 
@@ -34,7 +34,7 @@ var speed = 3;
 
 function preload() {
     copBackImg = loadImage("copBack.png");
-    canvasImg = loadImage("goal.png");
+    SPimg = loadImage("SP-V3-Fill.jpg");
     eyesImg = loadImage("eyes.png");
     randyImg = loadImage("randy.png");
     copImg = loadImage("cop.png");
@@ -54,7 +54,7 @@ function draw() {
 
     noTint();
 
-    image(canvas, 0, 0);
+    image(SPimg, 0, 0);
     image( copBackImg, copBackImgX, copBackImgY);
 
 
@@ -67,7 +67,7 @@ function draw() {
         /*CopHatClicked*/
 
         if 	(mouseX > width/2 && mouseY < height/2) {
-            image(canvas, 0, 0);
+            image(SPimg, 0, 0);
             image(copImg, CopX, CopY);
             CopX += random(-4, 4);
             CopY += random(2, 7);
@@ -119,7 +119,7 @@ function draw() {
         /*Towelie-Comment*/
 
         if (mouseX < width/2 && mouseY < height/2) {
-            image(canvas, 0, 0);
+            image(SPimg, 0, 0);
 
 
             image(redEyesImg, TowlieX, TowlieY ,width/2, height/2);

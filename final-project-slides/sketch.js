@@ -1,0 +1,46 @@
+/*
+Final-project-Presentation
+by Jon
+11.15.2018
+rough draft
+mmp 210 week 11
+
+*/
+/*
+    final project presentation slides
+*/
+var slide = 0;
+
+var bird, fish;
+
+function preload() {
+    bird = loadImage("bird.jpg");
+    fish = loadImage("fish.jpg");
+}
+
+function setup() {
+    createCanvas(800, 500);
+    textSize(60);
+    textFont('monospace');
+    textAlign(CENTER, CENTER);
+    rectMode(CENTER);
+}
+
+function draw() {
+    background(220);
+    
+    if (slide == 0) {
+        text("Final Project Idea", width/2, height/2);
+    } else if (slide == 1) {
+        textSize(30);
+        text("Force resisiting sensor", 200, 100);
+        
+        // fsr graphic
+        rect(width/2, 300, 50, 300);
+        ellipse(width/2, 200, 150);
+    } else if (slide == 2) {
+        text("theme: animals", 200, 20);
+        image(bird, 200, 100);
+        image(fish, 400, 100);
+    }
+}

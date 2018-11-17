@@ -1,0 +1,49 @@
+body {
+  font-family: helvetica,sans serif;
+  margin: 0, auto;
+  padding: 0;
+  background-color: aliceblue;
+  color: black;
+  text-align: center;
+
+}
+
+
+
+#container {
+  /*padding: 50px 0;*/
+  width: 500px;
+  margin: 0 auto;
+}
+
+.link {
+  list-style: none;
+  color: red;
+  font-size: 2em;
+}
+
+.link a {
+  color: orange;
+}
+
+a {
+  color: red;
+  transition: color 500ms
+}
+
+a:hover {
+  color: white;
+}
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.
