@@ -1,3 +1,4 @@
+
 body {
   font-family: helvetica,sans serif;
   margin: 0, auto;
@@ -11,7 +12,7 @@ body {
 
 
 #container {
-  /*padding: 50px 0;*/
+  padding: 50px 0;
   width: 500px;
   margin: 0 auto;
 }
@@ -34,16 +35,5 @@ a {
 a:hover {
   color: white;
 }
-© 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Press h to open a hovercard with more details.
+
+
