@@ -21,8 +21,6 @@ var arrow;
 var arrowLeft;
 
 function preload() {
-    bird = loadImage("bird.jpg");
-    fish = loadImage("fish.jpg");
     potentiometer = loadImage("potentiometer.jpg");
     button = loadImage("button.jpg");
     framework = loadImage("framework.png");
@@ -36,7 +34,7 @@ function preload() {
 function setup() {
     createCanvas(800, 500);
     textSize(60);
-    textFont('monospace');
+    textFont('roboto');
     textAlign(CENTER, CENTER);
     rectMode(CENTER);
 }
