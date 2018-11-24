@@ -67,7 +67,7 @@ function draw() {
     } else if (slide == 2) {
         textSize(18);
         text("framework", 375, 20);
-        image(framework, 150, 40);
+        image(framework, 150, 0);
         image(arrow,735, 410);
         image(arrowLeft,10, 410);
         
@@ -94,3 +94,66 @@ function mousePressed() {
         }
     }
 }
+
+////sound examples//
+//var chickens;
+//var coin;
+//var music;
+//
+//var x = 100;
+//var y = 100;
+//var s = 100;
+//var r = 0;
+//var g = 0;
+//var b = 0;
+//
+//function preload() {
+//    chickens = loadSound("chickens.mp3");
+//    
+//    function draw() {
+//          background('yellow');
+//    } else background('green')
+//           }
+//        fill(r, g, b, );
+//        ellipse(x, y, s);
+//    
+//    var vol = map(mouseY, 0, height, 1, 0);
+//    music.setVolume(vol);
+//    
+////    var pan = map(mouseX, 0, width, -1, 1);
+////    music.pan(pan);
+//    
+//    var rate = map(mouseX, 0, width, 0.1, 3);
+//    music.rate(rate);
+//        
+//    }
+//    
+//   
+//    
+//    //look for p5 sound under libraries//
+//}
+//
+//function mousePressed() {
+//    if chickens.isPlaying()) {
+//       chickens.pause();
+//    } else {
+//    chickens.play();
+//}
+//var d = dist(x,y mouseX, mouseY);
+//if (d < s/2) {
+//    
+//    r = (255);
+//    g = (255);
+//    b = (255);
+//    coin.play();
+//}
+
+
+
+
+ 
+
+
+
+
+
