@@ -11,7 +11,7 @@ mmp 210 week 11
 */
 var slide = 0;
 
-var bird, fish;
+
 var potentiometer;
 var button;
 var framework;
@@ -24,7 +24,7 @@ function preload() {
     potentiometer = loadImage("potentiometer.jpg");
     button = loadImage("button.jpg");
     framework = loadImage("framework.png");
-    retro = loadImage("retro.jpeg");
+    retro = loadImage("retro-slide.png");
     coverImg = loadImage("slide-0-retro.jpg");
     arrow = loadImage("black-arrow.png");
     arrowLeft = loadImage("black-arrow left.png");
@@ -64,15 +64,15 @@ function draw() {
         /*framework*/
     } else if (slide == 2) {
         textSize(18);
-        text("framework", 375, 20);
-        image(framework, 150, 0);
+        text("framework", 55, 50);
+        image(framework, 150, -30);
         image(arrow,735, 410);
         image(arrowLeft,10, 410);
         
         /*retro*/
     } else if (slide == 3) {
-        text("retro option", 375, 20);
-        image(retro,180, 40);
+        
+        image(retro,100, -70);
         image(arrowLeft,10, 410);
 
     }

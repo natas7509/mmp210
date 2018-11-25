@@ -1,107 +1,130 @@
-/*
-self portrait
-v1.
-by Jon Darling
-Hard coded_Interaction
-*/
-var goalie;
-var spr1;
-var spr;
+//goal
+var goal;
+var goalX = 120;
+var goalY = 40;
+//background
+var grass;
+var grassX = 0;
+var grassY = 60;
+var grassH = 620;
 
+// Soccer Img
 var soccerBall;
+var ballX = 60;
+var ballY = 500;
+
+// Goalie 
+var goalie;
+var goalieX = 140;
+var goalieY = 100;
+//var goalieW = 50;
+//var goalieH = 75;
+
+// Gaolie Speed
+var goalieSpeed = 9;
+
+// Soccer boy1
+var SoccerBoy1;
+var SoccerBoy1X = -300;
+var SoccerBoy1Y = 3;
+
 
 function preload() {
     soccerBall = loadImage('ball.png')
-    
+    goalie = loadImage('goalie.png')
+    goal = loadImage('goal.png')
+   grass = loadImage('grass.jpg')
+    SoccerBoy1 = loadImage('soccer-boy1.png')
+
+
 }
 
-function setup() {
+function setup () {
     createCanvas(600, 600);
-    goalie = new Group();
+}
 
-    spr1 = createSprite(width / 2, height / 9, 270, 100);
-    spr1.shapeColor = color('red');
-    //    spr1.mouseActive = true;
-    spr = createSprite(
-        width / 12, height / 1.2, 40, 40, 40);
-    spr.shapeColor = color(255);
-
-
-
-
-    for (var i = 0; i < 10; i++) {
-        var c = createSprite(210, 80, 45, 80);
-        c.shapeColor = color(0);
-        goalie.add(c);
-    }
+function draw () {
    
+    background("blue");
+     image(grass, grassX, grassY);
+   
+    
 
-
-}
-
-function draw() {
-    background(50);
-    for (var i = 0; i < goalie.length; i++) {
-        goalie[i].position.x += goalie[i].width * 0.04;
-        if (goalie[i].position.x > 400) {
-            (goalie[i].position.x = 200)
-        }
-        //          spr.velocity.x = (mouseX-spr.position.x)*0.2;
-        //  spr.velocity.y = (mouseY-spr.position.y)*0.1;
-        spr.collide(goalie);
-        
-        
-
-
-    }
+    // Ball
+    image(soccerBall, ballX, ballY, 40, 40);
+    
+    //SoccerBoy1
+     image(SoccerBoy1,SoccerBoy1X ,SoccerBoy1Y);
+    
+     
 
 
 
-
-
-    if (spr1.mouseIsOver) {
-        background(100);
-    }
-    fill(255);
-    noStroke();
-    textAlign(CENTER, CENTER);
-    text("use arrow keys, or SPACEBAR to stop",
-        width / 2, height * 0.95);
-
-    drawSprites();
-
-
-}
-
-
-
-
-function keyPressed() {
+    // Keycodes to move ball
     if (keyCode == RIGHT_ARROW) {
-        spr.setSpeed(3.5, 0);
-
-    } else if (keyCode == DOWN_ARROW) {
-        spr.setSpeed(3.5, 90);
+        ballX += 5;
     } else if (keyCode == LEFT_ARROW) {
-        spr.setSpeed(3.5, 180);
+        ballX -= 5;
     } else if (keyCode == UP_ARROW) {
-        spr.setSpeed(3.5, 270);
-    } else if (key == ' ') {
-        spr.setSpeed(0, 0);
-    } else if (key == 's') {
-        spr.setSpeed(10.5, 270);
-
+        ballY -= 25;
+    } else if (keyCode == DOWN_ARROW) {
+        ballY += 5;
     }
 
+    // Prevents ball x from going off screen
+    if(ballX > 500) {
+        ballX = 500;
 
-    return false;
+    } else if (ballX < 70) {
+
+        ballX = 70;
+    }
+
+    // Prevents ball y from going off screen
+    if(ballY < 35) {
+        ballY = 35;
+
+    } else if (ballY > 525) {
+
+        ballY = 525;
+    }
+    
+   
+    // Goalie
+    //    rect(goalieX, goalieY, goalieW, goalieH);
+    image( goalie, goalieX, goalieY, 120, 100);
+    goalieX = goalieX + goalieSpeed;
+     // goal
+ image( goal, goalX, goalY, 360, 100);
 
 
+    // can try to make collision using this
+
+    // if (ballX > goalieX && ballX < goalieX + goalieW && ballY > goalieY && ballY < goalieY + goalieH) {
+    //  r = random(0, 255);
+    //  g = random(0, 255);
+    // b = random(0, 255);
+    // fill(r, g, b);
+    // }
 
 
+    // Prevents goalie from going off screen
+    if (goalieX > 380 || goalieX < 140) {
+        goalieSpeed *= -1;
+    }
+}
 
+// Ball movement Toggle
+var isDrawing = true;
+function keyPressed() {
+    if (keyCode === ENTER) {
 
+        if(isDrawing) {
+            noLoop();
+        } else {
+            loop();
+        }
 
-
-
+        isDrawing = !isDrawing
+    }
 }
