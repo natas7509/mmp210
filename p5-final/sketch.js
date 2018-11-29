@@ -27,36 +27,47 @@ var goalieSpeed = 9;
 var SoccerBoy1;
 var SoccerBoy1X = -300;
 var SoccerBoy1Y = 3;
+// Sound 
+var crowd;
+
 
 
 function preload() {
     soccerBall = loadImage('ball.png')
     goalie = loadImage('goalie.png')
     goal = loadImage('goal.png')
-   grass = loadImage('grass.jpg')
+    grass = loadImage('grass.jpg')
     SoccerBoy1 = loadImage('soccer-boy1.png')
+    crowd = loadSound("crowd.mp3")
+
+
+
 
 
 }
 
 function setup () {
     createCanvas(600, 600);
+
+
 }
 
 function draw () {
-   
+
     background("blue");
-     image(grass, grassX, grassY);
-   
-    
+    image(grass, grassX, grassY);
+//    crowd.playMode("restart");
+    crowd.play();
+
+
 
     // Ball
     image(soccerBall, ballX, ballY, 40, 40);
-    
+
     //SoccerBoy1
-     image(SoccerBoy1,SoccerBoy1X ,SoccerBoy1Y);
-    
-     
+    image(SoccerBoy1,SoccerBoy1X ,SoccerBoy1Y);
+
+
 
 
 
@@ -88,14 +99,14 @@ function draw () {
 
         ballY = 525;
     }
-    
-   
+
+
     // Goalie
     //    rect(goalieX, goalieY, goalieW, goalieH);
     image( goalie, goalieX, goalieY, 120, 100);
     goalieX = goalieX + goalieSpeed;
-     // goal
- image( goal, goalX, goalY, 360, 100);
+    // goal
+    image( goal, goalX, goalY, 360, 100);
 
 
     // can try to make collision using this

@@ -15,7 +15,9 @@ var slide = 0;
 var potentiometer;
 var button;
 var framework;
-var retro;
+var first;
+var second;
+var third;
 var coverImg;
 var arrow;
 var arrowLeft;
@@ -24,7 +26,9 @@ function preload() {
     potentiometer = loadImage("potentiometer.jpg");
     button = loadImage("button.jpg");
     framework = loadImage("framework.png");
-    retro = loadImage("retro-slide.png");
+    first = loadImage("1st.png");
+    second = loadImage("2nd.png");
+    third = loadImage("3rd.png");
     coverImg = loadImage("slide-0-retro.jpg");
     arrow = loadImage("black-arrow.png");
     arrowLeft = loadImage("black-arrow left.png");
@@ -45,7 +49,7 @@ function draw() {
     if (slide == 0) {
         image(coverImg,0, 40);
         image(arrow,735, 410);
-       
+
 
         /*Sensor Graphics*/
     } else if (slide == 1) {
@@ -68,14 +72,27 @@ function draw() {
         image(framework, 150, -30);
         image(arrow,735, 410);
         image(arrowLeft,10, 410);
-        
+
         /*retro*/
     } else if (slide == 3) {
-        
-        image(retro,100, -70);
+
+        image(first,100, -70);
+        image(arrow,735, 410);
         image(arrowLeft,10, 410);
 
-    }
+    }  else if (slide == 4) {
+
+        image(second,100, -70);
+        image(arrow,735, 410);
+        image(arrowLeft,10, 410);
+
+    }  else if (slide == 5) {
+
+        image(third,100, -35);
+        image(arrowLeft,10, 410);
+        
+
+    } 
 
 
 
@@ -83,7 +100,7 @@ function draw() {
 
 function mousePressed() {
     if (mouseX > width/2) {
-        if (slide < 3) {
+        if (slide < 5) {
             slide++;
         }
     } else {
@@ -149,7 +166,7 @@ function mousePressed() {
 
 
 
- 
+
 
 
 
