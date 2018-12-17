@@ -10,7 +10,7 @@ var grassH = 620;
 
 // Soccer Img
 var soccerBall;
-var ballX = 60;
+var ballX = 50;
 var ballY = 500;
 
 // Goalie 
@@ -20,16 +20,20 @@ var goalieY = 100;
 //var goalieW = 50;
 //var goalieH = 75;
 
-// Gaolie Speed
-var goalieSpeed = 9;
+// Goalie Speed
+var goalieSpeed = 7;
 
 // Soccer boy1
 var SoccerBoy1;
 var SoccerBoy1X = -300;
 var SoccerBoy1Y = 3;
 // Sound 
-var crowd;
+var Crowd;
+//var mouseX;
+//var mouseY;
+var r, g, b;
 
+var Goaaall;
 
 
 function preload() {
@@ -38,16 +42,23 @@ function preload() {
     goal = loadImage('goal.png')
     grass = loadImage('grass.jpg')
     SoccerBoy1 = loadImage('soccer-boy1.png')
-    crowd = loadSound("crowd.mp3")
-
-
-
+    Crowd = loadSound('Crowd-1.mp3')
+    Goaaall = loadSound('GOAAAALL.mp3')
+    
 
 
 }
 
 function setup () {
     createCanvas(600, 600);
+    
+    
+  
+    Crowd.play();
+//    Goaaall.play();  
+    
+      
+        
 
 
 }
@@ -55,9 +66,10 @@ function setup () {
 function draw () {
 
     background("blue");
+
+
     image(grass, grassX, grassY);
-//    crowd.playMode("restart");
-    crowd.play();
+    
 
 
 
@@ -68,7 +80,7 @@ function draw () {
     image(SoccerBoy1,SoccerBoy1X ,SoccerBoy1Y);
 
 
-
+    var shootSpeed = 25;
 
 
     // Keycodes to move ball
@@ -77,7 +89,7 @@ function draw () {
     } else if (keyCode == LEFT_ARROW) {
         ballX -= 5;
     } else if (keyCode == UP_ARROW) {
-        ballY -= 25;
+        ballY -= shootSpeed;
     } else if (keyCode == DOWN_ARROW) {
         ballY += 5;
     }
@@ -92,13 +104,32 @@ function draw () {
     }
 
     // Prevents ball y from going off screen
-    if(ballY < 35) {
-        ballY = 35;
+    if(ballY < 50) {
+        ballY = 50;
+        
+//        shootSpeed = 0;
+
 
     } else if (ballY > 525) {
 
         ballY = 525;
+    }  
+//    console.log(mouseX, mouseY);
+
+
+    // 458 140
+    if(ballY < 140 && ballX > 440) {
+        
+        ballY = ballY + shootSpeed; 
+        console.log(ballY)
+    } 
+    
+    if(ballY < -10 && ballX < 123) {
+        
+        ballY = ballY + shootSpeed; 
+//        console.log(ballY)
     }
+
 
 
     // Goalie
@@ -108,34 +139,76 @@ function draw () {
     // goal
     image( goal, goalX, goalY, 360, 100);
 
+//    fill(r, g, b);
+//    ellipse(50, 30, 100, 100);
+
+
 
     // can try to make collision using this
 
-    // if (ballX > goalieX && ballX < goalieX + goalieW && ballY > goalieY && ballY < goalieY + goalieH) {
-    //  r = random(0, 255);
-    //  g = random(0, 255);
-    // b = random(0, 255);
-    // fill(r, g, b);
-    // }
+    //     if (ballX > goalX && ballX < goalX + goalieW && ballY > goalieY && ballY < goalieY + goalieH) {
+    //      r = random(0, 255);
+    //      g = random(0, 255);
+    //     b = random(0, 255);
+    //     fill(r, g, b);
+    //     }
 
 
     // Prevents goalie from going off screen
     if (goalieX > 380 || goalieX < 140) {
         goalieSpeed *= -1;
     }
+    
+    
+    /* rect goal */
+    
+    var x = 120;
+    var y = -30;
+    var w = 360;
+    var h = 90;
+    if ( ballX > x && ballX < x + w && ballY > y && ballY < y + h ) {
+//        fill('red');
+        
+        textSize(32);
+        textAlign(CENTER);
+        text('GOALLL!!!!', width/2, height/2);
+        text('Press spacebar to retry', width/2, 350);
+        Goaaall.play();
+      
+//        noLoop();
+        
+    
+    } else {
+        noFill();
+        
+        
+    }
+    
+    fill('red');
+   stroke('red'); 
+   
+
 }
+
+
 
 // Ball movement Toggle
 var isDrawing = true;
 function keyPressed() {
-    if (keyCode === ENTER) {
-
-        if(isDrawing) {
-            noLoop();
-        } else {
-            loop();
-        }
-
-        isDrawing = !isDrawing
+    
+    if(keyCode == 32) {
+        location.reload();
     }
+    
 }
+    
+
+
+
+    
+
+
+
+
+
+

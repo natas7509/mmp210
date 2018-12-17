@@ -34,7 +34,7 @@ var speed = 3;
 
 function preload() {
     copBackImg = loadImage("copBack.png");
-    canvasImg = loadImage("goal.png");
+    canvasImg = loadImage("SP-drunk-img.jpg");
     eyesImg = loadImage("eyes.png");
     randyImg = loadImage("randy.png");
     copImg = loadImage("cop.png");
