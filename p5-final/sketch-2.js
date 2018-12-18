@@ -132,17 +132,17 @@ function draw() {
   //SoccerBoy1
   image(SoccerBoy1, SoccerBoy1X, SoccerBoy1Y);
 
-  var shootSpeed = 25;
+  var shootSpeed = 20;
 
   // Keycodes to move ball
   if (keyCode == RIGHT_ARROW) {
-    ballX += 5;
+    ballX += 4;
   } else if (keyCode == LEFT_ARROW) {
-    ballX -= 5;
+    ballX -= 4;
   } else if (keyCode == UP_ARROW) {
     ballY -= shootSpeed;
   } else if (keyCode == DOWN_ARROW) {
-    ballY += 5;
+    ballY += 4;
   }
 
   // Prevents ball x from going off screen
