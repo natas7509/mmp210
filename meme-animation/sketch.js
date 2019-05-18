@@ -49,25 +49,16 @@ function setup() {
 function draw() {
 
     background(233);
-
     fill(255);
-
-    noTint();
-
-    image(canvas, 0, 0);
+//    noTint();
+    image(canvasImg, 0, 0);
     image( copBackImg, copBackImgX, copBackImgY);
-
-
-
-
-
-
 
     if (mouseIsPressed){
         /*CopHatClicked*/
 
         if 	(mouseX > width/2 && mouseY < height/2) {
-            image(canvas, 0, 0);
+            image(canvasImg, 0, 0);
             image(copImg, CopX, CopY);
             CopX += random(-4, 4);
             CopY += random(2, 7);
@@ -95,7 +86,6 @@ function draw() {
 
 
             image(randyImg,VomitX, VomitY, width, height);
-
             VomitX += random(-3, 3);
             VomitY += random(-1, 1);
             textSize(40);
@@ -110,11 +100,7 @@ function draw() {
                 stanX = 154;
             }
         }
-
-
-
-
-
+    
 
         /*Towelie-Comment*/
 
